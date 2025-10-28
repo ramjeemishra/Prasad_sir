@@ -35,15 +35,38 @@ if age >= 18:
 
 
 #authenticate useer
-saved_name = input("enter a username: ")
-saved_pass = input("enter a password: ")
-print("\naccount created")
-user_name = input("enter ur username: ")
-user_pass = input("enter ur password: ")
-if user_name == saved_name and user_pass == saved_pass:
-    print(" u have logged in successfully!")
-else:
-    print(" invalid username or password.")
+saved_name=input("enter a username:")
+saved_pass=input("enter a password:")
+saved_mobile=input("enter your mobile number:")
+print("account created")
+while True:
+    user_name=input("enter your username:")
+    user_pass=input("enter your password:")
+    if user_name==saved_name and user_pass==saved_pass:
+        print("logged in successfully")
+        otp="1234"
+        print("your otp is:",otp)
+        attempts=0
+        while attempts<3:
+            entered_otp=input("enter otp:")
+            if entered_otp==otp:
+                print("login verified successfully")
+                break
+            else:
+                attempts+=1
+                print("wrong otp, attempts left:",3-attempts)
+        if attempts==3:
+            print("account blocked")
+        break
+    else:
+        print("invalid username or password")
 
 
 
+# int to str
+a = 123
+b = str(a)
+
+# str to int
+x = "456"
+y = int(x)
